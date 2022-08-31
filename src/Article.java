@@ -1,13 +1,28 @@
+import java.sql.Date;
+
 public class Article {
     private int id;
     private String title;
     private String  brief;
     private String  content;
-    private String createDate;
-    private String  isPublished;
-    private User user_id;
+    private Date createDate;
+    private boolean  isPublished;
+    private int user_id;
 
-    public Article(int id, String title, String brief, String content, String createDate, String isPublished, User user_id) {
+    public Article(String title, String brief, String content, Date createDate) {
+        this.title = title;
+        this.brief = brief;
+        this.content = content;
+        this.createDate = createDate;
+    }
+
+    public Article(int id, String title, String brief) {
+        this.id = id;
+        this.title = title;
+        this.brief = brief;
+    }
+
+    public Article(int id, String title, String brief, String content, Date createDate, boolean isPublished, int user_id) {
         this.id = id;
         this.title = title;
         this.brief = brief;
@@ -49,27 +64,40 @@ public class Article {
         this.content = content;
     }
 
-    public String getCreateDate() {
+    public Date getCreateDate() {
         return createDate;
     }
 
-    public void setCreateDate(String createDate) {
+    public void setCreateDate(Date createDate) {
         this.createDate = createDate;
     }
 
-    public String getIsPublished() {
+    public boolean getIsPublished() {
         return isPublished;
     }
 
-    public void setIsPublished(String isPublished) {
+    public void setIsPublished(boolean isPublished) {
         this.isPublished = isPublished;
     }
 
-    public User getUser_id() {
+    public int getUser_id() {
         return user_id;
     }
 
-    public void setUser_id(User user_id) {
+    public void setUser_id(int user_id) {
         this.user_id = user_id;
+    }
+
+    @Override
+    public String toString() {
+        return "Article{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", brief='" + brief + '\'' +
+                ", content='" + content + '\'' +
+                ", createDate=" + createDate +
+                ", isPublished=" + isPublished +
+                ", user_id=" + user_id +
+                '}';
     }
 }

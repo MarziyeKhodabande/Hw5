@@ -1,11 +1,13 @@
+import java.sql.Date;
+
 public class User {
     private int id;
     private String username;
     private String nationalCode;
-    private String birthday;
+    private Date birthday;
     private String  password;
 
-    public User(int id, String username, String nationalCode, String birthday, String password) {
+    public User(int id, String username, String nationalCode, Date birthday, String password) {
         this.id = id;
         this.username = username;
         this.nationalCode = nationalCode;
@@ -37,11 +39,11 @@ public class User {
         this.nationalCode = nationalCode;
     }
 
-    public String getBirthday() {
+    public Date getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(String birthday) {
+    public void setBirthday(Date birthday) {
         this.birthday = birthday;
     }
 
